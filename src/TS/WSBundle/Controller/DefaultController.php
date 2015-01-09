@@ -7,15 +7,30 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\BrowserKit\Request;
 
-class DefaultController extends Controller
+use FOS\RestBundle\Controller\Annotations,
+    FOS\RestBundle\Controller\FOSRestController,
+    FOS\RestBundle\Request\ParamFetcherInterface,
+    FOS\RestBundle\View\View,
+    FOS\RestBundle\View\RouteRedirectView,
+    FOS\RestBundle\Util\Codes;
+
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+
+use Symfony\Component\Form\FormTypeInterface,
+    Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+    ;
+
+use Symfony\Component\HttpFoundation\Response;
+
+class DefaultController extends FOSRestController
 {
     /**
-     * @Annotations\Post("/crear_persona")
+     * @Annotations\Post("/getdata/{modelo}")
      *
      * @ApiDoc(
      *   section = "WS",
      *   resource = true,
-     *   input = "Servir\WSConexionFactorhBundle\Form\Type\PersonalType",
+     *   input = "TS\TSBundle\Form\Type\PersonalType",
      *     statusCodes = {
      *         201 = "Created",
      *         400 = "Bad Request: Errores en input"

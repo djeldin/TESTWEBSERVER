@@ -2,7 +2,3 @@ tsws:
     resource: "@TSWSBundle/Controller/"
     type:     annotation
     prefix:   /
-
-app:
-    resource: @AppBundle/Controller/
-    type:     annotation
