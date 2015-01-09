@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Hautelook\TemplatedUriBundle\HautelookTemplatedUriBundle(),
+            new Propel\PropelBundle\PropelBundle(),
 
             new AppBundle\AppBundle(),
             new TS\WSBundle\TSWSBundle(),

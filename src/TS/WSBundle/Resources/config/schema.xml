@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="TS\WSBundle\Model" defaultIdMethod="native">
+    <table name="WS">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="telefono" type="varchar" primaryString="1" size="100" />
+        <column name="status" type="varchar" size="100" />
+        <column name="marca" type="varchar" size="100"/>
+        <column name="modelo" type="varchar" size="100" />
+    </table>
+</database>
