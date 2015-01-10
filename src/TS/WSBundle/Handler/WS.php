@@ -61,7 +61,16 @@ class WS {
             ->findByTelefono($numero)
         ;
 
-        return $query;
+        $array = array();
+
+        foreach ($query as $element) {
+            $array[] = ['telefono' => $element[WsPeer::TELEFONO]];
+            $array[] = ['marca' => $element[WsPeer::MARCA]];
+            $array[] = ['modelo' => $element[WsPeer::MODELO]];
+            $array[] = ['status' => $element[WsPeer::STATUS]];
+        }
+
+        return $array;
     }
 
     /**
@@ -75,7 +84,12 @@ class WS {
             ->select(array(WsPeer::TELEFONO))
             ->findByMarca($marca)
         ;
+        $array = array();
 
-        return $query;
+        foreach ($query as $element) {
+            $array[] = ['telefono' => $element];
+        }
+
+        return $array;
     }
 }

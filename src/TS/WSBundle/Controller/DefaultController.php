@@ -50,7 +50,7 @@ class DefaultController extends FOSRestController
         try {
             $response = $this->container->get('ts_wsbundle.handler.ws')->get($numero);
 
-            return new Response($response);
+            return $response;
 
         } catch (Exception $e) {
             return new Response($e->getMessage());
@@ -82,7 +82,7 @@ class DefaultController extends FOSRestController
         try {
             $response = $this->container->get('ts_wsbundle.handler.ws')->getByMarca($marca);
 
-            return new Response($response);
+            return $response;
 
         } catch (Exception $e) {
             return new Response($e->getMessage());
