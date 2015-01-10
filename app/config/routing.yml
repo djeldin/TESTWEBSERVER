@@ -1,4 +1,15 @@
 tsws:
-    resource: "@TSWSBundle/Controller/"
-    type:     annotation
-    prefix:   /
+    resource: "@TSWSBundle/Controller/DefaultController.php"
+    type:     rest
+    prefix:   /ts/ws
+
+_welcome_2:
+    pattern:    /ts
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: nelmio_api_doc_index
+        permanent: true # this for 301
+
+NelmioApiDocBundle:
+    resource:   "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:     /ts/doc
